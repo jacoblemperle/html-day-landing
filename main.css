@@ -8,6 +8,7 @@ html {
     -webkit-font-smoothing: antialiased !important;
 }
 
+
 h1,h2,h3,h4,h5,h6 {
     color: #232323
 }
@@ -48,20 +49,25 @@ h3{
 
 .main-header {
     width:100%;
+    position: relative;
     height:55px;
     margin-bottom: 24px;
 }
 
 .logo {
-    display: inline-block;
+  width: 220px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
     font-family: 'Oswald', sans-serif;
 }
 
 .menu {
-    display: inline-block;
-    float: right;
+  display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
     width:40px;
-
 }
 
 .menu img {
@@ -106,3 +112,51 @@ h3{
     font-size: 1.4rem;
 
 }
+
+.main-content-section{
+  display:flex;
+  flex-direction: column;
+}
+
+.site-nav {
+  display: none;
+  top: 20px;
+  right: 10px;
+  width: 300px;
+  position: absolute;
+}
+
+.site-nav ul {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media (min-width: 900px){
+  html {
+      font-size: 18px;
+  }
+  .main-content-section{
+    display:flex;
+    flex-direction: row;
+  }
+  .image-block {
+    margin-top: 95px;
+    margin-right: 30px;
+  }
+}
+
+@media (min-width: 1300px){
+  html {
+      font-size: 20px;
+  }
+}
+/*Anything > 700px hide menu*/
+@media (min-width: 700px){
+  .menu {
+    display: none;
+}
+  .site-nav {
+    display: flex;
+
+  }
